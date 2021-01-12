@@ -1,34 +1,46 @@
 import React from 'react';
-import { ThemeProvider } from 'styled-components';
+import {ThemeProvider} from 'styled-components';
 
-import { useDarkMode } from './useDarkMode';
-import { lightTheme, darkTheme } from './theme';
-import { GlobalStyles } from './global';
+import {useDarkMode} from './useDarkMode';
+import {lightTheme, darkTheme} from './theme';
+import {GlobalStyles} from './global';
 
+// Components
 import Toggle from './components/Toggle';
+import Navbar from "./components/Navbar";
+import Contact from "./components/Contact";
+import About from "./components/About";
+import Routes from "./components/Route";
+
+import {BrowserRouter} from "react-router-dom";
+
 
 function App() {
-  const [theme, toggleTheme, componentMounted] = useDarkMode();
-  const themeMode = theme === 'light' ? lightTheme : darkTheme;
+    const [theme, toggleTheme, componentMounted] = useDarkMode();
+    const themeMode = theme === 'light' ? lightTheme : darkTheme;
 
-  if (!componentMounted) {
-    return <div />
-  };
+    if (!componentMounted) {
+        return <div/>
+    }
+    ;
 
-  return (
-    <ThemeProvider theme={themeMode}>
-      <>
-        <GlobalStyles />
-        <Toggle theme={theme} toggleTheme={toggleTheme} />
-        <h1>It's a {theme === 'light' ? 'light theme' : 'dark theme'}!</h1>
-        <footer>
-          <span>Credits:</span>
-          <small><b>Sun</b> icon made by <a href="https://www.flaticon.com/authors/smalllikeart">smalllikeart</a> from <a href="https://www.flaticon.com">www.flaticon.com</a></small>
-          <small><b>Moon</b> icon made by <a href="https://www.freepik.com/home">Freepik</a> from <a href="https://www.flaticon.com">www.flaticon.com</a></small>
-        </footer>
-      </>
-    </ThemeProvider>
-  );
+    return (
+        <div>
+            <BrowserRouter>
+                <ThemeProvider theme={themeMode}>
+                    <>
+                        <GlobalStyles/>
+                        <Navbar />
+                        {/*<About/>*/}
+                        {/*<Toggle theme={theme} toggleTheme={toggleTheme}/>*/}
+                        {/*<Contact/>*/}
+
+                    </>
+                </ThemeProvider>
+            </BrowserRouter>
+        </div>
+
+    );
 };
 
 export default App;
