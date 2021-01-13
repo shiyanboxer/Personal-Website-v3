@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import Emoji from "./Emoji";
+import Emoji from "../features/Emoji";
 
 class About extends Component {
     render() {

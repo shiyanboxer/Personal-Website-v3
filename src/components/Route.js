@@ -1,7 +1,7 @@
 import React from "react"
 import {Route, Switch} from "react-router-dom"
-import About from "./About";
-import Contact from "./Contact";
+import About from "./sections/About";
+import Contact from "./sections/Contact";
 
 class Routes extends React.Component {
     render() {

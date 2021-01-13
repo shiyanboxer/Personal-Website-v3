@@ -10,7 +10,7 @@ import Typography from '@material-ui/core/Typography';
 
 // import AccessAlarmIcon from '@material-ui/icons/AccessAlarm';
 // import ThreeDRotation from '@material-ui/icons/ThreeDRotation';
-import Emoji from "./Emoji";
+import Emoji from "../features/Emoji";
 
 const useStyles = makeStyles({
     root: {
