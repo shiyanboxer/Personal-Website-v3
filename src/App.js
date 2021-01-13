@@ -11,8 +11,9 @@ import Navbar from "./components/Navbar";
 import Contact from "./components/Contact";
 import About from "./components/About";
 import Routes from "./components/Route";
-
+import MediaCard from "./components/Project";
 import {BrowserRouter} from "react-router-dom";
+import {Button} from "react-bootstrap";
 
 
 function App() {
@@ -30,10 +31,10 @@ function App() {
                 <ThemeProvider theme={themeMode}>
                     <>
                         <GlobalStyles/>
-                        <Navbar />
-                        {/*<About/>*/}
-                        {/*<Toggle theme={theme} toggleTheme={toggleTheme}/>*/}
-                        {/*<Contact/>*/}
+                        <Navbar/>
+                        <About/>
+                        <Contact/>
+                        <MediaCard />
 
                     </>
                 </ThemeProvider>
